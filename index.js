@@ -1,14 +1,16 @@
 const express = require("express");
-const { createServer } = require("http");
 const path = require("path");
 
 const app = express();
-const server = createServer(app);
+
+// app.set("view engine", "ejs");
+app.set("views", "public");
+
+// static folder path
+app.use(express.static("public"));
 
 app.get("/", (req, res) => {
-	res.sendFile(path.join(__dirname, "index.html"));
+	res.sendFile(path.join(__dirname, "./public/index.html"));
 });
 
-server.listen(3000, () => {
-	console.log("server running at http://localhost:3000");
-});
+module.exports = app;

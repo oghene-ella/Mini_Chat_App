@@ -3,16 +3,17 @@
 
 <head>
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <title>Socket.IO chat</title>
+    <title>Messaging App</title>
     <style>
         body {
             margin: 0;
             padding-bottom: 3rem;
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background: #333;
         }
 
         #form {
-            background: rgba(0, 0, 0, 0.15);
+            background: rgba(255, 3, 116, 0.572);
             padding: 0.25rem;
             position: fixed;
             bottom: 0;
@@ -43,7 +44,7 @@
             margin: 0.25rem;
             border-radius: 3px;
             outline: none;
-            color: #fff;
+            color: white;
         }
 
         #messages {
@@ -57,7 +58,19 @@
         }
 
         #messages>li:nth-child(odd) {
-            background: #efefef;
+            background: rgb(248, 236, 246);
+            color: rgba(255, 3, 116, 0.572);
+            padding: 10px;
+            font-weight: bold;
+            text-transform: capitalize;
+        }
+        #messages>li:nth-child(even) {
+            background: rgba(255, 3, 116, 0.572);
+            padding: 10px;
+            text-align: right;
+            color: white;
+            font-weight: bold;
+            text-transform: capitalize;
         }
     </style>
 </head>
@@ -70,8 +83,6 @@
 </body>
 
 <script src="/socket.io/socket.io.js"></script>
-<script>
-    const socket = io();
-</script>
+<script src="./socketCall.js"></script>
 
 </html>
